@@ -1,0 +1,80 @@
+A. API category :
+1. GET http://localhost:3000/categories -> untuk melihat semua kategori
+
+2. GET http://localhost:3000/category/id -> untuk mencari kategori berdasarkan id
+
+3. POST http://localhost:3000/category -> untuk menambah data kategori
+a. tulis di body request raw kategori yg mau ditambahkan
+{
+   "categoryname": "snack"
+}
+
+4. PUT http://localhost:3000/category -> untuk mengubah data kategori
+-> tulis di body request raw kategori yg mau diubah
+{
+   "categoryid": "d3ca6d6d-4769-45b1-8b5b-da363560bd1d",
+   "categoryname": "snack"
+}
+
+5. DELETE http://localhost:3000/category/id -> untuk menghapus kategori berdasarkan id (soft delete, hanya mengganti statusnya menjadi Inactive)
+
+
+B. API product
+1. GET http://localhost:3000/products -> untuk melihat semua product
+
+2. GET http://localhost:3000/product/id -> untuk mencari product berdasarkan id
+
+3. POST http://localhost:3000/product -> untuk menambah data product
+a. tulis di body request raw product yg mau ditambahkan
+{
+   "productcode": "sadi",
+   "productname": "sepatu adidas",
+   "productcategory": "00389671-fd78-4435-86cd-3a5c6c6f2901",
+   "productprice": 399000
+}
+
+4. PUT http://localhost:3000/product -> untuk mengubah data product
+-> tulis di body request raw product yg mau diubah
+{
+   "productid": "a138b4a2-1379-498f-b3e6-ee7b51ff86de",
+   "productcode": "sadi",
+   "productname": "sepatu adidas",
+   "productcategory": "00389671-fd78-4435-86cd-3a5c6c6f2901",
+   "productprice": 500000,
+   "status": "A"
+}
+
+5. DELETE http://localhost:3000/product/id -> untuk menghapus product berdasarkan id (soft delete, hanya mengganti statusnya menjadi Inactive)
+
+
+
+C. API transaction
+1. GET http://localhost:3000/transactions -> untuk melihat semua transaction
+
+
+2. GET http://localhost:3000/transaction/id -> untuk mencari transaction berdasarkan id
+
+3. POST http://localhost:3000/transaction -> untuk menambah data transaction
+a. tulis di body request raw transaction yg mau ditambahkan
+{
+   "productid": "d7e10b1a-8e8a-47f7-9c6c-27f15c73d575",
+   "qty": 10
+}
+
+4. PUT http://localhost:3000/transaction -> untuk mengubah data transaction
+-> tulis di body request raw transaction yg mau diubah
+{
+   "transactionid": "7e65abbb-bc6b-11ea-b81f-dc4a3e5ea168",
+   "transactiondate": "2020-07-03 19:20:22",
+   "productid": "d7e10b1a-8e8a-47f7-9c6c-27f15c73d575",
+   "qty": 1
+}
+
+5. DELETE http://localhost:3000/transaction/id -> untuk menghapus transaction berdasarkan id (soft delete, hanya mengganti statusnya menjadi Inactive)
+
+D. API report :
+1. GET http://localhost:3000/dailyreport/year/month/day -> untuk melihat report harian
+contoh : http://localhost:3000/dailyreport/2020/07/03
+
+2. GET http://localhost:3000/dailyreport/month -> untuk melihat report bulanan
+contoh : http://localhost:3000/dailyreport/07
